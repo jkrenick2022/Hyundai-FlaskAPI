@@ -55,8 +55,8 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'status': 'Engine started successfully',
-    'speech': 'Your car has been started.'
+    "status": "Engine started successfully",
+    "speech": "Your car has been started."
   }
 
 #### Stop Engine
@@ -66,8 +66,8 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'status': 'Engine stopped successfully',
-    'speech' : 'Your car has been stopped.'
+    "status": "Engine stopped successfully",
+    "speech": "Your car has been stopped."
   }
 
 #### Lock Doors
@@ -77,8 +77,8 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'status': 'Doors locked successfully',
-    'speech': 'The doors have been locked successfully.'
+    "status": "Doors locked successfully",
+    "speech": "The doors have been locked successfully."
   }
 
 #### Unlock Doors
@@ -88,8 +88,8 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'status': 'Doors unlocked successfully',
-    'speech': 'The doors have been unlocked successfully.'
+    "status": "Doors unlocked successfully",
+    "speech": "The doors have been unlocked successfully."
   }
 
 #### Odometer
@@ -99,8 +99,8 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'odometer': odometer,
-    'speech': f'The odometer reading is {odometer} miles.'
+    "odometer": odometer,
+    "speech": f"The odometer reading is {odometer} miles."
   }
 
 #### Find Car
@@ -110,10 +110,10 @@ This Flask application provides an API to control various functions of your car 
 - **Response**:
   ```json
   {
-    'latitude': latitude,
-    'longitude': longitude,
-    'location': location_name,
-    'speech': f'Your car is located at {location_name}.'
+    "latitude": latitude,
+    "longitude": longitude,
+    "location": location_name,
+    "speech": f"Your car is located at {location_name}."
   }
 
 ## Setting Up Siri Shortcuts
