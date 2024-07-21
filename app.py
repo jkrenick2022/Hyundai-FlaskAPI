@@ -27,16 +27,20 @@ car = bl.cars[VIN]
 
 @app.route('/', methods=["GET"])
 def home():
-    return "hello world"
+    return "hello world", 200
 
-@app.route('/start-engine', methods=['GET'])
+@app.route('/test', methods=['POST'])
+def test():
+    return jsonify({'message': 'POST request successful'}), 200
+
+@app.route('/start-engine', methods=['POST'])
 def start_engine():
     try:
         car.start(duration=10, 
                     temp="70", 
                     defrost= False)
         return jsonify({'status': 'Engine started successfully',
-                        'speech' : 'Your car has been started.'})
+                        'speech' : 'Your car has been started.'}), 200
     except Exception as e:
         return jsonify({'error': str(e), 'speech' : 'I could not start your car, please try again.'}), 500
     
@@ -50,7 +54,7 @@ def stop_engine():
         return jsonify({'error': str(e),
                         'speech' : 'I could not shut off your car, please try again.'}), 500
 
-@app.route('/lock-doors', methods=['GET'])
+@app.route('/lock-doors', methods=['POST'])
 def lock_doors():
     try:
         car.lock()
@@ -59,7 +63,7 @@ def lock_doors():
     except Exception as e:
         return jsonify({'error': str(e), 'speech': 'I could not lock the doors, please try again.'}), 500
 
-@app.route('/unlock-doors', methods=['GET'])
+@app.route('/unlock-doors', methods=['POST'])
 def unlock_doors():
     try:
         car.unlock()
@@ -89,7 +93,7 @@ def get_location_name(lat, lon, api_key):
         return "Unknown location"
 
 
-@app.route('/find-car', methods=['GET'])
+@app.route('/find-car', methods=['POST'])
 def find_car():
     try:
         latitude, longitude = car.find()
